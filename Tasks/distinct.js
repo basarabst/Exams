@@ -1,19 +1,17 @@
 // Return an array without duplicates
 
-DISTINCT = (data) => {
-  console.log({ data });
-  A = new Set();
-  w = 0;
-  data.forEach((a) => {
-    if (A.has(a)) {
-      delete data[w];
-    } else {
-      A.add(a);
+// Distinct is fixed. Test is passed: 9 of 9
+
+'use strict';
+
+const distinct = (arr) => {
+  const res = [];
+  for (const item of arr) {
+    if (!res.includes(item)) {
+      res.push(item);
     }
-    w++;
-  });
-  return data.filter
-  (x => typeof x === 'number');
+  }
+  return res;
 };
 
-require('../Tests/distinct.js')(DISTINCT);
+require('../Tests/distinct.js')(distinct);
